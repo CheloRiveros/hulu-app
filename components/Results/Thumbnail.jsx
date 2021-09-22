@@ -1,11 +1,13 @@
 import PropTypes from "prop-types";
 import Image from "next/image";
 import { ThumbUpIcon } from "@heroicons/react/outline";
+import { forwardRef } from "react";
 
-const Thumbnail = ({ movie }) => {
+const Thumbnail = forwardRef(({ movie }, ref) => {
   const BASE_URL = "https://image.tmdb.org/t/p/original/";
   return (
-    <div className="group cursor-pointer p-2 transition duration-200 easi-in transform sm:hover:scale-105 hover:z-50">
+    <div ref ={ref} className="group cursor-pointer p-2 transition duration-200 easy-in
+      transform sm:hover:scale-105 hover:z-50">
       <Image
         layout="responsive"
         height={1080}
@@ -25,7 +27,7 @@ const Thumbnail = ({ movie }) => {
       </div>
     </div>
   );
-};
+});
 
 Thumbnail.propTypes = {};
 
